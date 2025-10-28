@@ -57,7 +57,7 @@ export default async function HomePage() {
               size="lg"
               className="bg-accent hover:bg-accent/90 text-accent-foreground"
             >
-              <Link href="#lead-form">Solicitar diagnóstico</Link>
+              <Link href="#lead-form">Solicitar Presupuesto</Link>
             </Button>
           </div>
         </div>

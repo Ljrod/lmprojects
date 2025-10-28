@@ -110,7 +110,7 @@ export default function LeadForm({
     <Card id="lead-form" className="w-full max-w-2xl mx-auto">
       <CardHeader>
         <CardTitle className="text-3xl font-bold text-primary">
-          Solicite un diagnóstico
+          Solicite un Presupuesto
         </CardTitle>
         <CardDescription>
           Complete el formulario y uno de nuestros especialistas se pondrá en
@@ -230,7 +230,7 @@ export default function LeadForm({
               {isPending ? (
                 <Loader2 className="mr-2 h-4 w-4 animate-spin" />
               ) : null}
-              {isPending ? 'Enviando...' : 'Solicitar diagnóstico'}
+              {isPending ? 'Enviando...' : 'Solicitar Presupuesto'}
             </Button>
           </form>
         </Form>

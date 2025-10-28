@@ -67,7 +67,7 @@ export async function submitLead(
       // Simulate a successful submission for UI development without Firebase connection
       await new Promise(resolve => setTimeout(resolve, 1000));
       return {
-        message: 'Diagnóstico solicitado con éxito. Nos pondremos en contacto pronto.',
+        message: 'Presupuesto solicitado con éxito. Nos pondremos en contacto pronto.',
         success: true,
       };
     }
@@ -79,7 +79,7 @@ export async function submitLead(
     });
 
     return {
-      message: 'Diagnóstico solicitado con éxito. Nos pondremos en contacto pronto.',
+      message: 'Presupuesto solicitado con éxito. Nos pondremos en contacto pronto.',
       success: true,
     };
   } catch (error) {
