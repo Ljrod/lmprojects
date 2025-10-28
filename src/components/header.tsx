@@ -61,6 +61,17 @@ export default function Header() {
                       </Link>
                     ))}
                   </nav>
+                   <div className="mt-8 flex flex-col space-y-4">
+                    <Button asChild variant="ghost">
+                      <Link href="/signin">Sign in</Link>
+                    </Button>
+                    <Button
+                      asChild
+                      className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                    >
+                      <Link href="/login">Login</Link>
+                    </Button>
+                  </div>
                 </div>
               </SheetContent>
             </Sheet>
@@ -91,9 +102,14 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* This empty div is a placeholder to keep the justify-between working correctly with the centered nav */}
-        <div className="hidden md:block"></div>
-
+        <div className="hidden md:flex items-center gap-4">
+          <Button asChild variant="ghost">
+             <Link href="/signin">Sign in</Link>
+          </Button>
+          <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
+            <Link href="/login">Login</Link>
+          </Button>
+        </div>
       </div>
     </header>
   );
