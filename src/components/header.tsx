@@ -144,18 +144,15 @@ export default function Header() {
 
         <nav className="hidden absolute left-1/2 -translate-x-1/2 items-center gap-6 text-sm md:flex">
           <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button
-                variant="ghost"
-                className={cn(
-                  'font-medium transition-colors hover:text-accent focus-visible:ring-0',
-                  isLinkActive('/servicios')
-                    ? 'text-primary'
-                    : 'text-muted-foreground'
-                )}
-              >
-                Servicios <ChevronDown className="ml-2 h-4 w-4" />
-              </Button>
+            <DropdownMenuTrigger
+              className={cn(
+                'flex items-center gap-1 font-medium transition-colors hover:text-accent focus-visible:outline-none focus-visible:ring-0',
+                isLinkActive('/servicios')
+                  ? 'text-primary'
+                  : 'text-muted-foreground'
+              )}
+            >
+              Servicios <ChevronDown className="h-4 w-4" />
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuItem asChild>
