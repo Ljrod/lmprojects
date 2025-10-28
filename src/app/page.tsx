@@ -49,11 +49,10 @@ export default async function HomePage() {
         )}
         <div className="container relative z-10 text-center max-w-7xl mx-auto">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
-            Transforma tu infraestructura TI con LM Projects
+            LM Projects: Migración a la nube y renovación de equipos con gestión experta
           </h1>
           <p className="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-primary-foreground/80">
-            Migraciones y renovación tecnológica con gestión experta, sin
-            fricción operativa.
+            Implementamos y gestionamos proyectos TI para pymes, bancos y mineras en Chile: renovación de equipos tecnológicos, migración de sistemas operativos y traslado de servidores locales a Azure, AWS o Google Cloud. Garantizamos continuidad operativa, seguridad y plazos medibles, desde el diagnóstico hasta el soporte post-migración.
           </p>
           <div className="mt-10">
             <Button
