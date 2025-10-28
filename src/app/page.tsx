@@ -34,7 +34,7 @@ export default async function HomePage() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
 
   return (
-    <div className="max-w-7xl mx-auto">
+    <>
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 bg-primary text-primary-foreground">
         {heroImage && (
@@ -47,7 +47,7 @@ export default async function HomePage() {
             data-ai-hint={heroImage.imageHint}
           />
         )}
-        <div className="container relative z-10 text-center">
+        <div className="container relative z-10 text-center max-w-7xl mx-auto">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
             Transforma tu infraestructura TI con LM Projects
           </h1>
@@ -67,60 +67,65 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <section id="services" className="py-16 md:py-24 bg-background">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-primary">
-              Nuestros Servicios
-            </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-              Soluciones expertas para los desafíos tecnológicos de su empresa.
-            </p>
+      <div className="max-w-7xl mx-auto">
+        {/* Services Section */}
+        <section id="services" className="py-16 md:py-24 bg-background">
+          <div className="container">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight text-primary">
+                Nuestros Servicios
+              </h2>
+              <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                Soluciones expertas para los desafíos tecnológicos de su empresa.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {services.map(service => (
+                <ServiceCard key={service.id} service={service} />
+              ))}
+            </div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map(service => (
-              <ServiceCard key={service.id} service={service} />
-            ))}
-          </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Why Us Section */}
-      <section className="py-16 md:py-24 bg-secondary">
-        <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold tracking-tight text-primary">
-              ¿Por qué LM Projects?
-            </h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-              Su socio estratégico para una transformación tecnológica exitosa.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {whyUsPoints.map((point, index) => (
-              <div key={index} className="flex flex-col items-center">
-                <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary text-primary-foreground mb-6">
-                  <point.icon className="h-8 w-8" />
+        {/* Why Us Section */}
+        <section className="py-16 md:py-24 bg-secondary">
+          <div className="container">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold tracking-tight text-primary">
+                ¿Por qué LM Projects?
+              </h2>
+              <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+                Su socio estratégico para una transformación tecnológica exitosa.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              {whyUsPoints.map((point, index) => (
+                <div key={index} className="flex flex-col items-center">
+                  <div className="flex items-center justify-center h-16 w-16 rounded-full bg-primary text-primary-foreground mb-6">
+                    <point.icon className="h-8 w-8" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-primary">
+                    {point.title}
+                  </h3>
+                  <p className="mt-2 text-muted-foreground">
+                    {point.description}
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold text-primary">
-                  {point.title}
-                </h3>
-                <p className="mt-2 text-muted-foreground">
-                  {point.description}
-                </p>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      {/* Lead Form Section */}
-      <section id="lead-form-section" className="py-16 md:py-24 bg-background">
-        <div className="container">
-          <LeadForm services={serviceTitles} />
-        </div>
-      </section>
-    </div>
+        {/* Lead Form Section */}
+        <section
+          id="lead-form-section"
+          className="py-16 md:py-24 bg-background"
+        >
+          <div className="container">
+            <LeadForm services={serviceTitles} />
+          </div>
+        </section>
+      </div>
+    </>
   );
 }
