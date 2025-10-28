@@ -10,13 +10,24 @@ import {Sheet, SheetContent, SheetTrigger} from '@/components/ui/sheet';
 import {useState} from 'react';
 
 const navLinks = [
-  {href: '/', label: 'Inicio'},
   {href: '/servicios', label: 'Servicios'},
+  {href: '/nosotros', label: 'Nosotros'},
+  {href: '/#lead-form-section', label: 'Contacto'},
 ];
 
 export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const isLinkActive = (href: string) => {
+    if (href === '/') {
+      return pathname === href;
+    }
+    if (href.startsWith('/#')) {
+      return false; // Anchor links on the same page don't activate
+    }
+    return pathname.startsWith(href);
+  };
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -41,7 +52,7 @@ export default function Header() {
                         onClick={() => setIsMobileMenuOpen(false)}
                         className={cn(
                           'text-lg font-medium transition-colors hover:text-accent',
-                          pathname === link.href
+                          isLinkActive(link.href)
                             ? 'text-primary'
                             : 'text-foreground/60'
                         )}
@@ -70,7 +81,7 @@ export default function Header() {
               href={link.href}
               className={cn(
                 'font-medium transition-colors hover:text-accent',
-                pathname === link.href
+                isLinkActive(link.href)
                   ? 'text-primary'
                   : 'text-muted-foreground'
               )}
