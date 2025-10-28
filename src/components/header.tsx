@@ -74,7 +74,7 @@ export default function Header() {
           <Logo />
         </div>
 
-        <nav className="hidden items-center gap-6 text-sm md:flex">
+        <nav className="hidden absolute left-1/2 -translate-x-1/2 items-center gap-6 text-sm md:flex">
           {navLinks.map(link => (
             <Link
               key={link.href}
@@ -90,6 +90,10 @@ export default function Header() {
             </Link>
           ))}
         </nav>
+
+        {/* This empty div is a placeholder to keep the justify-between working correctly with the centered nav */}
+        <div className="hidden md:block"></div>
+
       </div>
     </header>
   );
