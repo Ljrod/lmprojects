@@ -62,7 +62,7 @@ export default function Header() {
                     ))}
                   </nav>
                    <div className="mt-8 flex flex-col space-y-4">
-                    <Button asChild variant="ghost">
+                    <Button asChild variant="ghost" className="duration-300">
                       <Link href="/signin">Sign in</Link>
                     </Button>
                     <Button
@@ -103,7 +103,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
-          <Button asChild variant="ghost">
+          <Button asChild variant="ghost" className="duration-300">
              <Link href="/signin">Sign in</Link>
           </Button>
           <Button asChild className="bg-accent hover:bg-accent/90 text-accent-foreground">
