@@ -34,7 +34,7 @@ export default async function HomePage() {
   const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
 
   return (
-    <>
+    <div className="max-w-7xl mx-auto">
       {/* Hero Section */}
       <section className="relative py-20 md:py-32 bg-primary text-primary-foreground">
         {heroImage && (
@@ -121,6 +121,6 @@ export default async function HomePage() {
           <LeadForm services={serviceTitles} />
         </div>
       </section>
-    </>
+    </div>
   );
 }

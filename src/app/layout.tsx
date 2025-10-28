@@ -29,9 +29,9 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-body flex min-h-screen flex-col bg-background text-foreground antialiased">
+      <body className="font-body flex min-h-screen flex-col items-center bg-background text-foreground antialiased">
         <Header />
-        <main className="flex-grow w-full max-w-7xl mx-auto">{children}</main>
+        <main className="w-full flex-grow">{children}</main>
         <Footer />
         <Toaster />
       </body>
