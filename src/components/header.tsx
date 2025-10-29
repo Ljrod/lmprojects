@@ -32,6 +32,7 @@ export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [services, setServices] = useState<Service[]>([]);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     async function fetchServices() {
@@ -39,6 +40,15 @@ export default function Header() {
       setServices(fetchedServices);
     }
     fetchServices();
+
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const isLinkActive = (href: string) => {
@@ -52,7 +62,14 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-card">
+    <header
+      className={cn(
+        'sticky top-0 z-50 w-full transition-all duration-300',
+        isScrolled
+          ? 'border-b bg-card shadow-sm'
+          : 'border-b border-transparent'
+      )}
+    >
       <div className="container flex h-16 items-center justify-between max-w-7xl mx-auto">
         <div className="flex items-center gap-4">
           <div className="md:hidden">
