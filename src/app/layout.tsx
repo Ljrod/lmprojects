@@ -3,14 +3,14 @@ import './globals.css';
 import {Toaster} from '@/components/ui/toaster';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import {default as icon} from '@/images/isologo.ico';
+import icon from '@/images/isologo.ico';
 
 export const metadata: Metadata = {
   title: 'LM Projects | Gestión y Migraciones Tecnológicas',
   description:
     'Transforma tu infraestructura TI con LM Projects. Migraciones y renovación tecnológica con gestión experta, sin fricción operativa.',
   icons: {
-    icon,
+    icon: icon.src,
   },
 };
 
