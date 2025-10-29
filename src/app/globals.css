@@ -34,8 +34,8 @@
   .dark {
     --background: 222 47% 11%; /* #111827 */
     --foreground: 210 40% 98%; /* #F9FAFB */
-    --card: 222 47% 14%; /* #192231 */
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%; /* Forzar el fondo del header a blanco en modo oscuro */
+    --card-foreground: 222 47% 11%; /* Forzar el texto del header a oscuro */
     --popover: 222 47% 11%;
     --popover-foreground: 210 40% 98%;
     --primary: 217 76% 20%; /* Adjusted for dark mode */
