@@ -11,8 +11,8 @@ export function Logo() {
       <Image
         src={logoImage}
         alt="LM Projects Logo"
-        width={140}
-        height={28}
+        width={160}
+        height={32}
         priority
       />
     </Link>
