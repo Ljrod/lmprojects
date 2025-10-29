@@ -66,8 +66,8 @@ export default function Header() {
       className={cn(
         'sticky top-0 z-50 w-full transition-all duration-300',
         isScrolled
-          ? 'border-b bg-card shadow-sm'
-          : 'border-b border-transparent'
+          ? 'border-b border-transparent'
+          : 'border-b bg-card shadow-sm'
       )}
     >
       <div className="container flex h-16 items-center justify-between max-w-7xl mx-auto">
