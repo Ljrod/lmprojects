@@ -30,28 +30,6 @@
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
-
-  .dark {
-    --background: 222 47% 11%; /* #111827 */
-    --foreground: 210 40% 98%; /* #F9FAFB */
-    --card: 0 0% 100%; /* Forzar el fondo del header a blanco en modo oscuro */
-    --card-foreground: 222 47% 11%; /* Forzar el texto del header a oscuro */
-    --popover: 222 47% 11%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 217 76% 20%; /* Adjusted for dark mode */
-    --primary-foreground: 0 0% 98%;
-    --secondary: 217 32.6% 17.5%; /* #202A3A */
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%; /* #9CA3AF */
-    --accent: 190 95% 48%; /* Slightly brighter accent */
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 217 32.6% 17.5%;
-    --input: 217 32.6% 17.5%;
-    --ring: 190 95% 48%;
-  }
 }
 
 @layer base {

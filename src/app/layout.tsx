@@ -3,7 +3,6 @@ import './globals.css';
 import {Toaster} from '@/components/ui/toaster';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import {ThemeProvider} from '@/components/theme-provider';
 import isologo from '@/images/isologo.ico';
 
 export const metadata: Metadata = {
@@ -35,17 +34,10 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body flex min-h-screen flex-col items-center bg-background text-foreground antialiased">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <Header />
-          <main className="w-full flex-grow">{children}</main>
-          <Footer />
-          <Toaster />
-        </ThemeProvider>
+        <Header />
+        <main className="w-full flex-grow">{children}</main>
+        <Footer />
+        <Toaster />
       </body>
     </html>
   );
