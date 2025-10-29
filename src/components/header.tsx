@@ -22,6 +22,7 @@ import {
 import {useState, useEffect} from 'react';
 import {getServices} from '@/lib/data';
 import type {Service} from '@/lib/types';
+import {ThemeToggle} from './theme-toggle';
 
 const navLinks = [
   {href: '/nosotros', label: 'Nosotros'},
@@ -187,6 +188,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden md:flex items-center gap-4">
+          <ThemeToggle />
           <Button asChild variant="ghost" className="duration-300">
             <Link href="/signin">Sign in</Link>
           </Button>

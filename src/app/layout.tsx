@@ -3,6 +3,8 @@ import './globals.css';
 import {Toaster} from '@/components/ui/toaster';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
+import {ThemeProvider} from '@/components/theme-provider';
+import isologo from '@/images/isologo.ico';
 
 export const metadata: Metadata = {
   title: 'LM Projects | Gestión y Migraciones Tecnológicas',
@@ -19,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -33,10 +35,17 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body flex min-h-screen flex-col items-center bg-background text-foreground antialiased">
-        <Header />
-        <main className="w-full flex-grow">{children}</main>
-        <Footer />
-        <Toaster />
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <main className="w-full flex-grow">{children}</main>
+          <Footer />
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );
