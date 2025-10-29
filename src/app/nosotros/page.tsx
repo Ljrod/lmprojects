@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Building, Target, Users } from 'lucide-react';
 
 export const metadata: Metadata = {
@@ -30,8 +29,6 @@ const teamMembers = [
 ];
 
 export default function NosotrosPage() {
-  const aboutImage = PlaceHolderImages.find(p => p.id === 'hero-background');
-
   return (
     <main>
         <section className="py-16 md:py-24 bg-background">
@@ -55,16 +52,14 @@ export default function NosotrosPage() {
                         </p>
                     </div>
                      <div>
-                        {aboutImage && (
-                            <Image
-                            src="https://picsum.photos/seed/aboutus/600/400"
-                            alt="Equipo de LM Projects trabajando"
-                            width={600}
-                            height={400}
-                            className="rounded-lg shadow-lg"
-                            data-ai-hint="team collaboration office"
-                            />
-                        )}
+                        <Image
+                        src="https://picsum.photos/seed/aboutus/600/400"
+                        alt="Equipo de LM Projects trabajando"
+                        width={600}
+                        height={400}
+                        className="rounded-lg shadow-lg"
+                        data-ai-hint="team collaboration office"
+                        />
                     </div>
                 </div>
             </div>

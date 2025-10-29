@@ -5,7 +5,7 @@ import ServiceCard from '@/components/service-card';
 import LeadForm from '@/components/lead-form';
 import {getServices, getServiceTitles} from '@/lib/data';
 import {Users, Package, ShieldCheck} from 'lucide-react';
-import {PlaceHolderImages} from '@/lib/placeholder-images';
+import heroImage from '@/images/hero.png';
 
 const whyUsPoints = [
   {
@@ -31,22 +31,19 @@ const whyUsPoints = [
 export default async function HomePage() {
   const services = await getServices();
   const serviceTitles = await getServiceTitles();
-  const heroImage = PlaceHolderImages.find(p => p.id === 'hero-background');
 
   return (
     <>
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 bg-primary text-primary-foreground">
-        {heroImage && (
-          <Image
-            src={heroImage.imageUrl}
-            alt={heroImage.description}
-            fill
-            className="object-cover opacity-10"
-            priority
-            data-ai-hint={heroImage.imageHint}
-          />
-        )}
+      <section className="relative w-full py-20 md:py-32 bg-primary text-primary-foreground">
+        <Image
+          src={heroImage}
+          alt="Server room with modern equipment."
+          fill
+          className="object-cover opacity-10"
+          priority
+          data-ai-hint="server room"
+        />
         <div className="container relative z-10 text-center max-w-7xl mx-auto">
           <h1 className="text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl">
             Migración a la nube y renovación de equipos con gestión experta
@@ -63,7 +60,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto w-full">
         {/* Services Section */}
         <section id="services" className="py-16 md:py-24 bg-background">
           <div className="container">
