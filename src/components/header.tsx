@@ -65,7 +65,9 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="left">
                 <div className="p-4">
-                  <Logo />
+                  <div className="mb-8">
+                    <Logo />
+                  </div>
                   <nav className="mt-8 flex flex-col space-y-2">
                     <Accordion type="single" collapsible className="w-full">
                       <AccordionItem value="services">
