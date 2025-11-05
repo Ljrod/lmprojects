@@ -35,7 +35,7 @@ export default async function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative w-full py-20 md:py-32 bg-primary text-primary-foreground">
+      <section className="relative w-full py-20 md:py-32 lg:py-48 bg-primary text-primary-foreground">
         <Image
           src={heroImage}
           alt="Server room with modern equipment."
