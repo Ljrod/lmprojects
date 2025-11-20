@@ -1,12 +1,12 @@
 'use client';
 
 import Link from 'next/link';
-import {usePathname} from 'next/navigation';
-import {Logo} from '@/components/logo';
-import {cn} from '@/lib/utils';
-import {Button} from './ui/button';
-import {Menu, ChevronDown} from 'lucide-react';
-import {Sheet, SheetContent, SheetTrigger} from '@/components/ui/sheet';
+import { usePathname } from 'next/navigation';
+import { Logo } from '@/components/logo';
+import { cn } from '@/lib/utils';
+import { Button } from './ui/button';
+import { Menu, ChevronDown } from 'lucide-react';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -19,13 +19,13 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import {useState, useEffect} from 'react';
-import {getServices} from '@/lib/data';
-import type {Service} from '@/lib/types';
+import { useState, useEffect } from 'react';
+import { getServices } from '@/lib/data';
+import type { Service } from '@/lib/types';
 
 const navLinks = [
-  {href: '/nosotros', label: 'Nosotros'},
-  {href: '/#lead-form-section', label: 'Contacto'},
+  { href: '/nosotros', label: 'Nosotros' },
+  { href: '/#lead-form-section', label: 'Contacto' },
 ];
 
 export default function Header() {
@@ -70,7 +70,7 @@ export default function Header() {
           : 'border-b bg-card shadow-sm'
       )}
     >
-      <div className="container flex h-16 items-center justify-between max-w-7xl mx-auto">
+      <div className="container flex h-20 items-center justify-between max-w-7xl mx-auto">
         <div className="flex items-center gap-4">
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
