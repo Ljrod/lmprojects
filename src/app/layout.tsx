@@ -4,6 +4,7 @@ import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import isologo from '@/images/isologo.ico';
+import { Chatbot } from '@/components/Chatbot';
 
 export const metadata: Metadata = {
   title: 'LM Projects | Gestión y Migraciones Tecnológicas',
@@ -38,6 +39,7 @@ export default function RootLayout({
         <main className="w-full flex-grow">{children}</main>
         <Footer />
         <Toaster />
+        <Chatbot />
       </body>
     </html>
   );
