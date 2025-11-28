@@ -30,6 +30,8 @@ export function Chatbot() {
     const scrollRef = useRef<HTMLDivElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
 
+    const [showGreeting, setShowGreeting] = useState(false);
+
     // Auto-scroll to bottom when messages change or chat opens
     useEffect(() => {
         if (scrollRef.current) {
@@ -43,6 +45,17 @@ export function Chatbot() {
             setTimeout(() => inputRef.current?.focus(), 100);
         }
     }, [isOpen, isMinimized]);
+
+    // Show greeting after 5 seconds
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            if (!isOpen) {
+                setShowGreeting(true);
+            }
+        }, 5000);
+
+        return () => clearTimeout(timer);
+    }, [isOpen]);
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -102,10 +115,37 @@ export function Chatbot() {
     const toggleChat = () => {
         setIsOpen(!isOpen);
         setIsMinimized(false);
+        setShowGreeting(false);
     };
 
     return (
         <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end sm:bottom-6 sm:right-6">
+            {/* Greeting Bubble */}
+            {showGreeting && !isOpen && (
+                <div className="mb-4 animate-in slide-in-from-bottom-5 fade-in duration-500">
+                    <div className="relative flex items-center gap-3 rounded-2xl border bg-white/90 p-4 shadow-xl backdrop-blur-sm dark:bg-card/90 dark:border-white/10 transition-transform hover:scale-105 cursor-pointer" onClick={toggleChat}>
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 shadow-md">
+                            <Bot className="h-6 w-6 text-white" />
+                        </div>
+                        <div className="flex flex-col gap-0.5">
+                            <span className="text-xs font-bold text-violet-600 dark:text-violet-400">Proyectito</span>
+                            <p className="text-sm font-medium text-foreground leading-tight">👋 ¡Hola! ¿Te puedo ayudar?</p>
+                        </div>
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                setShowGreeting(false);
+                            }}
+                            className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-muted shadow-sm hover:bg-destructive hover:text-destructive-foreground transition-colors"
+                        >
+                            <X className="h-3 w-3" />
+                        </button>
+                        {/* Triangle pointer */}
+                        <div className="absolute -bottom-2 right-8 h-4 w-4 rotate-45 bg-white/90 border-b border-r dark:bg-card/90 dark:border-white/10"></div>
+                    </div>
+                </div>
+            )}
+
             {isOpen && (
                 <div
                     className={cn(
