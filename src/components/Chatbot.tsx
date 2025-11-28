@@ -57,6 +57,33 @@ export function Chatbot() {
         return () => clearTimeout(timer);
     }, [isOpen]);
 
+    const [viewportHeight, setViewportHeight] = useState("100dvh");
+
+    // Handle mobile viewport height (keyboard adjustment)
+    useEffect(() => {
+        if (!isOpen) return;
+
+        const handleResize = () => {
+            if (window.visualViewport) {
+                setViewportHeight(`${window.visualViewport.height}px`);
+            }
+        };
+
+        if (window.visualViewport) {
+            window.visualViewport.addEventListener("resize", handleResize);
+            window.visualViewport.addEventListener("scroll", handleResize);
+            // Set initial height
+            handleResize();
+        }
+
+        return () => {
+            if (window.visualViewport) {
+                window.visualViewport.removeEventListener("resize", handleResize);
+                window.visualViewport.removeEventListener("scroll", handleResize);
+            }
+        };
+    }, [isOpen]);
+
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         if (!input.trim() || isLoading) return;
@@ -123,10 +150,11 @@ export function Chatbot() {
             {/* Chat Window */}
             {isOpen && (
                 <div
+                    style={{ height: window.innerWidth < 640 ? viewportHeight : undefined }}
                     className={cn(
                         "flex flex-col overflow-hidden bg-background shadow-2xl transition-all duration-300 ease-in-out",
                         // Mobile styles (default): Full screen, fixed
-                        "fixed inset-0 z-50 h-[100dvh] w-full rounded-none",
+                        "fixed inset-0 z-50 w-full rounded-none",
                         // Desktop styles (sm): Floating card
                         "sm:fixed sm:bottom-24 sm:right-6 sm:z-50 sm:h-[600px] sm:w-[400px] sm:rounded-2xl sm:border",
                         isMinimized && "hidden" // Hide main window when minimized (we'll show a small bar instead)
