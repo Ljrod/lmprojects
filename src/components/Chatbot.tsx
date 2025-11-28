@@ -66,6 +66,10 @@ export function Chatbot() {
         const handleResize = () => {
             if (window.visualViewport) {
                 setViewportHeight(`${window.visualViewport.height}px`);
+                // Force scroll to bottom after resize
+                if (scrollRef.current) {
+                    scrollRef.current.scrollIntoView({ behavior: "auto" });
+                }
             }
         };
 
@@ -83,6 +87,21 @@ export function Chatbot() {
             }
         };
     }, [isOpen]);
+
+    // Focus handler to poll for viewport changes (keyboard animation)
+    const handleInputFocus = () => {
+        // Poll for 500ms to catch keyboard animation
+        const interval = setInterval(() => {
+            if (window.visualViewport) {
+                setViewportHeight(`${window.visualViewport.height}px`);
+                if (scrollRef.current) {
+                    scrollRef.current.scrollIntoView({ behavior: "auto" });
+                }
+            }
+        }, 50);
+
+        setTimeout(() => clearInterval(interval), 600);
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -264,12 +283,13 @@ export function Chatbot() {
                             </ScrollArea>
 
                             {/* Input Area */}
-                            <div className="border-t bg-background p-4">
+                            <div className="border-t bg-background p-4 shrink-0">
                                 <form onSubmit={handleSubmit} className="relative flex items-center gap-2">
                                     <Input
                                         ref={inputRef}
                                         value={input}
                                         onChange={(e) => setInput(e.target.value)}
+                                        onFocus={handleInputFocus}
                                         placeholder="Escribe tu mensaje..."
                                         className="pr-12 h-12 rounded-full border-muted-foreground/20 bg-muted/30 focus-visible:ring-violet-600/20"
                                         disabled={isLoading}
