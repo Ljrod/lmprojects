@@ -119,44 +119,21 @@ export function Chatbot() {
     };
 
     return (
-        <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end sm:bottom-6 sm:right-6">
-            {/* Greeting Bubble */}
-            {showGreeting && !isOpen && (
-                <div className="mb-4 animate-in slide-in-from-bottom-5 fade-in duration-500">
-                    <div className="relative flex items-center gap-3 rounded-2xl border bg-white/90 p-4 shadow-xl backdrop-blur-sm dark:bg-card/90 dark:border-white/10 transition-transform hover:scale-105 cursor-pointer" onClick={toggleChat}>
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 shadow-md">
-                            <Bot className="h-6 w-6 text-white" />
-                        </div>
-                        <div className="flex flex-col gap-0.5">
-                            <span className="text-xs font-bold text-violet-600 dark:text-violet-400">Proyectito</span>
-                            <p className="text-sm font-medium text-foreground leading-tight">👋 ¡Hola! ¿Te puedo ayudar?</p>
-                        </div>
-                        <button
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                setShowGreeting(false);
-                            }}
-                            className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-muted shadow-sm hover:bg-destructive hover:text-destructive-foreground transition-colors"
-                        >
-                            <X className="h-3 w-3" />
-                        </button>
-                        {/* Triangle pointer */}
-                        <div className="absolute -bottom-2 right-8 h-4 w-4 rotate-45 bg-white/90 border-b border-r dark:bg-card/90 dark:border-white/10"></div>
-                    </div>
-                </div>
-            )}
-
+        <>
+            {/* Chat Window */}
             {isOpen && (
                 <div
                     className={cn(
-                        "mb-4 flex flex-col overflow-hidden rounded-2xl border bg-background shadow-2xl transition-all duration-300 ease-in-out",
-                        isMinimized
-                            ? "h-16 w-72"
-                            : "h-[80vh] w-[calc(100vw-2rem)] sm:h-[600px] sm:w-[400px]"
+                        "flex flex-col overflow-hidden bg-background shadow-2xl transition-all duration-300 ease-in-out",
+                        // Mobile styles (default): Full screen, fixed
+                        "fixed inset-0 z-50 h-[100dvh] w-full rounded-none",
+                        // Desktop styles (sm): Floating card
+                        "sm:fixed sm:bottom-24 sm:right-6 sm:z-50 sm:h-[600px] sm:w-[400px] sm:rounded-2xl sm:border",
+                        isMinimized && "hidden" // Hide main window when minimized (we'll show a small bar instead)
                     )}
                 >
                     {/* Header */}
-                    <div className="flex items-center justify-between bg-gradient-to-r from-violet-600 to-indigo-600 p-4 text-white shadow-sm">
+                    <div className="flex items-center justify-between bg-gradient-to-r from-violet-600 to-indigo-600 p-4 text-white shadow-sm shrink-0">
                         <div className="flex items-center gap-3">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
                                 <Bot className="h-6 w-6" />
@@ -290,32 +267,81 @@ export function Chatbot() {
                 </div>
             )}
 
-            {/* Floating Action Button */}
-            <Button
-                onClick={toggleChat}
-                size="lg"
-                className={cn(
-                    "h-14 w-14 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white border-0",
-                    isOpen ? "rotate-90 scale-0 opacity-0" : "scale-100 opacity-100"
-                )}
-            >
-                <MessageCircle className="h-7 w-7" />
-                <span className="sr-only">Abrir chat</span>
-            </Button>
-
-            {/* Close button when open (replaces FAB) */}
-            {isOpen && (
-                <Button
-                    onClick={toggleChat}
-                    size="lg"
-                    variant="secondary"
-                    className="absolute bottom-0 right-0 h-14 w-14 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl animate-in fade-in zoom-in duration-300"
-                >
-                    <X className="h-6 w-6" />
-                    <span className="sr-only">Cerrar chat</span>
-                </Button>
+            {/* Minimized State (Floating Bar) */}
+            {isOpen && isMinimized && (
+                <div className="fixed bottom-24 right-4 z-50 sm:bottom-24 sm:right-6">
+                    <div className="flex w-72 items-center justify-between rounded-2xl border bg-background p-4 shadow-2xl">
+                        <div className="flex items-center gap-3">
+                            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-violet-100 dark:bg-violet-900/30">
+                                <Bot className="h-5 w-5 text-violet-600 dark:text-violet-400" />
+                            </div>
+                            <span className="font-medium">Proyectito</span>
+                        </div>
+                        <div className="flex gap-1">
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="h-8 w-8 hover:bg-muted"
+                                onClick={() => setIsMinimized(false)}
+                            >
+                                <MessageCircle className="h-4 w-4" />
+                            </Button>
+                            <Button
+                                variant="ghost"
+                                size="icon"
+                                className="h-8 w-8 hover:bg-muted"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                <X className="h-4 w-4" />
+                            </Button>
+                        </div>
+                    </div>
+                </div>
             )}
-        </div>
+
+            {/* Floating Action Button & Greeting Container */}
+            <div className="fixed bottom-4 right-4 z-50 flex flex-col items-end sm:bottom-6 sm:right-6">
+                {/* Greeting Bubble */}
+                {showGreeting && !isOpen && (
+                    <div className="mb-4 animate-in slide-in-from-bottom-5 fade-in duration-500">
+                        <div className="relative flex items-center gap-3 rounded-2xl border bg-white/90 p-4 shadow-xl backdrop-blur-sm dark:bg-card/90 dark:border-white/10 transition-transform hover:scale-105 cursor-pointer" onClick={toggleChat}>
+                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 shadow-md">
+                                <Bot className="h-6 w-6 text-white" />
+                            </div>
+                            <div className="flex flex-col gap-0.5">
+                                <span className="text-xs font-bold text-violet-600 dark:text-violet-400">Proyectito</span>
+                                <p className="text-sm font-medium text-foreground leading-tight">👋 ¡Hola! ¿Te puedo ayudar?</p>
+                            </div>
+                            <button
+                                onClick={(e) => {
+                                    e.stopPropagation();
+                                    setShowGreeting(false);
+                                }}
+                                className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-muted shadow-sm hover:bg-destructive hover:text-destructive-foreground transition-colors"
+                            >
+                                <X className="h-3 w-3" />
+                            </button>
+                            {/* Triangle pointer */}
+                            <div className="absolute -bottom-2 right-8 h-4 w-4 rotate-45 bg-white/90 border-b border-r dark:bg-card/90 dark:border-white/10"></div>
+                        </div>
+                    </div>
+                )}
+
+                {/* Floating Action Button */}
+                {!isOpen && (
+                    <Button
+                        onClick={toggleChat}
+                        size="lg"
+                        className={cn(
+                            "h-14 w-14 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white border-0",
+                            "scale-100 opacity-100"
+                        )}
+                    >
+                        <MessageCircle className="h-7 w-7" />
+                        <span className="sr-only">Abrir chat</span>
+                    </Button>
+                )}
+            </div>
+        </>
     );
 }
-
