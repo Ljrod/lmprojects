@@ -129,9 +129,9 @@ export function Chatbot() {
                     className={cn(
                         "flex flex-col overflow-hidden bg-background shadow-2xl transition-all duration-300 ease-in-out",
                         // Mobile styles (default): Full screen, fixed
-                        "fixed inset-0 z-50 w-full rounded-none",
+                        "fixed bottom-0 left-0 z-50 w-full h-[100%] overscroll-contain rounded-none",
                         // Desktop styles (sm): Floating card
-                        "sm:fixed sm:bottom-6 sm:right-6 sm:z-50 sm:h-[500px] sm:w-[350px] sm:rounded-2xl sm:border sm:left-auto sm:top-auto",
+                        "sm:fixed sm:bottom-6 sm:right-6 sm:z-50 sm:h-[500px] sm:w-[350px] sm:rounded-2xl sm:border sm:left-auto sm:top-auto sm:overscroll-auto",
                         isMinimized && "hidden" // Hide main window when minimized (we'll show a small bar instead)
                     )}
                 >
