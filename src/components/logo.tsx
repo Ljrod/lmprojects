@@ -4,11 +4,11 @@ import logoImage from '@/images/logo.png';
 
 import { cn } from '@/lib/utils';
 
-export function Logo({ className }: { className?: string }) {
+export function Logo({ className, imageClassName }: { className?: string; imageClassName?: string }) {
   return (
     <Link
       href="/"
-      className={cn("inline-block hover:opacity-80 transition-opacity", className)}
+      className={cn("flex items-center justify-center hover:opacity-80 transition-opacity relative h-20 w-auto", className)}
     >
       <Image
         src={logoImage}
@@ -16,7 +16,7 @@ export function Logo({ className }: { className?: string }) {
         width={240}
         height={48}
         priority
-        className="h-16 w-auto"
+        className={cn("h-full w-auto object-contain", imageClassName)}
       />
     </Link>
   );

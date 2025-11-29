@@ -153,7 +153,10 @@ export default function Header() {
             </Sheet>
           </div>
           <div className="hidden md:block">
-            <Logo />
+            <Logo
+              className="relative z-50"
+              imageClassName="md:absolute md:top-1/2 md:-translate-y-1/2 md:h-32 md:w-auto md:max-w-none"
+            />
           </div>
         </div>
 
