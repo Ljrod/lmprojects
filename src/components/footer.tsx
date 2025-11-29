@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="container max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center md:items-start gap-2">
-            <Logo className="text-white h-12 w-auto" />
+            <Logo className="text-white h-12 w-auto md:h-12 lg:h-12" />
             <p className="text-sm text-primary-foreground/60">
               © {new Date().getFullYear()} LM Projects.
             </p>

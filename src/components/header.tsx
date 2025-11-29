@@ -70,7 +70,7 @@ export default function Header() {
           : 'border-b bg-card shadow-sm'
       )}
     >
-      <div className="container flex h-20 items-center justify-between max-w-7xl mx-auto">
+      <div className="container relative flex h-16 items-center justify-between max-w-7xl mx-auto">
         <div className="flex items-center gap-4">
           <div className="md:hidden">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
@@ -152,11 +152,8 @@ export default function Header() {
               </SheetContent>
             </Sheet>
           </div>
-          <div className="hidden md:block">
-            <Logo
-              className="relative z-50"
-              imageClassName="md:absolute md:top-1/2 md:-translate-y-1/2 md:h-32 md:w-auto md:max-w-none"
-            />
+          <div className="hidden md:flex absolute top-0 left-4 h-full items-center z-50">
+            <Logo className="relative z-50" />
           </div>
         </div>
 
