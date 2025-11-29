@@ -136,7 +136,7 @@ export function Chatbot() {
                     )}
                 >
                     {/* Header */}
-                    <div className="flex items-center justify-between bg-gradient-to-r from-violet-600 to-indigo-600 p-4 text-white shadow-sm shrink-0">
+                    <div className="flex items-center justify-between bg-gradient-to-r from-orange-500 to-amber-600 p-4 text-white shadow-sm shrink-0">
                         <div className="flex items-center gap-3">
                             <div className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
                                 <Bot className="h-6 w-6" />
@@ -188,8 +188,8 @@ export function Chatbot() {
                                             )}
                                         >
                                             {msg.role === "bot" && (
-                                                <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-violet-100 dark:bg-violet-900/30">
-                                                    <Bot className="h-5 w-5 text-violet-600 dark:text-violet-400" />
+                                                <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30">
+                                                    <Bot className="h-5 w-5 text-orange-600 dark:text-orange-400" />
                                                 </div>
                                             )}
 
@@ -201,7 +201,7 @@ export function Chatbot() {
                                                     className={cn(
                                                         "rounded-2xl px-4 py-2.5 text-sm shadow-sm",
                                                         msg.role === "user"
-                                                            ? "rounded-tr-none bg-violet-600 text-white"
+                                                            ? "rounded-tr-none bg-orange-500 text-white"
                                                             : "rounded-tl-none bg-card text-card-foreground border"
                                                     )}
                                                 >
@@ -213,7 +213,7 @@ export function Chatbot() {
                                             </div>
 
                                             {msg.role === "user" && (
-                                                <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-violet-600">
+                                                <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-500">
                                                     <User className="h-5 w-5 text-white" />
                                                 </div>
                                             )}
@@ -222,14 +222,14 @@ export function Chatbot() {
 
                                     {isLoading && (
                                         <div className="flex w-full gap-2 justify-start">
-                                            <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-violet-100 dark:bg-violet-900/30">
-                                                <Bot className="h-5 w-5 text-violet-600 dark:text-violet-400" />
+                                            <div className="mt-1 flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30">
+                                                <Bot className="h-5 w-5 text-orange-600 dark:text-orange-400" />
                                             </div>
                                             <div className="rounded-2xl rounded-tl-none bg-card border px-4 py-3 shadow-sm">
                                                 <div className="flex gap-1">
-                                                    <span className="h-2 w-2 animate-bounce rounded-full bg-violet-600/40 [animation-delay:-0.3s]"></span>
-                                                    <span className="h-2 w-2 animate-bounce rounded-full bg-violet-600/40 [animation-delay:-0.15s]"></span>
-                                                    <span className="h-2 w-2 animate-bounce rounded-full bg-violet-600/40"></span>
+                                                    <span className="h-2 w-2 animate-bounce rounded-full bg-orange-500/40 [animation-delay:-0.3s]"></span>
+                                                    <span className="h-2 w-2 animate-bounce rounded-full bg-orange-500/40 [animation-delay:-0.15s]"></span>
+                                                    <span className="h-2 w-2 animate-bounce rounded-full bg-orange-500/40"></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -246,14 +246,14 @@ export function Chatbot() {
                                         value={input}
                                         onChange={(e) => setInput(e.target.value)}
                                         placeholder="Escribe tu mensaje..."
-                                        className="pr-12 h-12 rounded-full border-muted-foreground/20 bg-muted/30 focus-visible:ring-violet-600/20"
+                                        className="pr-12 h-12 rounded-full border-muted-foreground/20 bg-muted/30 focus-visible:ring-orange-500/20"
                                         disabled={isLoading}
                                     />
                                     <Button
                                         type="submit"
                                         size="icon"
                                         disabled={isLoading || !input.trim()}
-                                        className="absolute right-1.5 h-9 w-9 rounded-full bg-violet-600 hover:bg-violet-700 transition-transform hover:scale-105 active:scale-95 text-white"
+                                        className="absolute right-1.5 h-9 w-9 rounded-full bg-orange-500 hover:bg-orange-600 transition-transform hover:scale-105 active:scale-95 text-white"
                                     >
                                         <Send className="h-4 w-4" />
                                         <span className="sr-only">Enviar</span>
@@ -275,8 +275,8 @@ export function Chatbot() {
                 <div className="fixed bottom-24 right-4 z-50 sm:bottom-24 sm:right-6">
                     <div className="flex w-72 items-center justify-between rounded-2xl border bg-background p-4 shadow-2xl">
                         <div className="flex items-center gap-3">
-                            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-violet-100 dark:bg-violet-900/30">
-                                <Bot className="h-5 w-5 text-violet-600 dark:text-violet-400" />
+                            <div className="flex h-8 w-8 items-center justify-center rounded-full bg-orange-100 dark:bg-orange-900/30">
+                                <Bot className="h-5 w-5 text-orange-600 dark:text-orange-400" />
                             </div>
                             <span className="font-medium">Proyectito</span>
                         </div>
@@ -307,25 +307,28 @@ export function Chatbot() {
                 {/* Greeting Bubble */}
                 {showGreeting && !isOpen && (
                     <div className="mb-4 animate-in slide-in-from-bottom-5 fade-in duration-500">
-                        <div className="relative flex items-center gap-3 rounded-2xl border bg-white/90 p-4 shadow-xl backdrop-blur-sm dark:bg-card/90 dark:border-white/10 transition-transform hover:scale-105 cursor-pointer" onClick={toggleChat}>
-                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gradient-to-r from-violet-600 to-indigo-600 shadow-md">
-                                <Bot className="h-6 w-6 text-white" />
+                        <div
+                            className="relative flex items-center gap-3 rounded-2xl border border-slate-100 bg-white p-4 shadow-xl transition-transform hover:scale-105 cursor-pointer text-slate-800"
+                            onClick={toggleChat}
+                        >
+                            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-orange-100 shadow-inner">
+                                <Bot className="h-6 w-6 text-orange-600" />
                             </div>
                             <div className="flex flex-col gap-0.5">
-                                <span className="text-xs font-bold text-violet-600 dark:text-violet-400">Proyectito</span>
-                                <p className="text-sm font-medium text-foreground leading-tight">👋 ¡Hola! ¿Te puedo ayudar?</p>
+                                <span className="text-xs font-bold text-orange-600">Proyectito</span>
+                                <p className="text-sm font-medium leading-tight text-slate-700">👋 ¡Hola! ¿Te puedo ayudar?</p>
                             </div>
                             <button
                                 onClick={(e) => {
                                     e.stopPropagation();
                                     setShowGreeting(false);
                                 }}
-                                className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-muted shadow-sm hover:bg-destructive hover:text-destructive-foreground transition-colors"
+                                className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-slate-100 shadow-md hover:bg-red-100 hover:text-red-600 transition-colors border border-slate-200"
                             >
-                                <X className="h-3 w-3" />
+                                <X className="h-3 w-3 text-slate-500 hover:text-red-600" />
                             </button>
                             {/* Triangle pointer */}
-                            <div className="absolute -bottom-2 right-8 h-4 w-4 rotate-45 bg-white/90 border-b border-r dark:bg-card/90 dark:border-white/10"></div>
+                            <div className="absolute -bottom-2 right-8 h-4 w-4 rotate-45 bg-white border-b border-r border-slate-100"></div>
                         </div>
                     </div>
                 )}
@@ -336,8 +339,10 @@ export function Chatbot() {
                         onClick={toggleChat}
                         size="lg"
                         className={cn(
-                            "h-14 w-14 rounded-full shadow-xl transition-all duration-300 hover:scale-110 hover:shadow-2xl bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white border-0",
-                            "scale-100 opacity-100"
+                            "h-14 w-14 rounded-full transition-all duration-300 bg-gradient-to-r from-orange-500 to-amber-600 text-white border-0",
+                            "shadow-[0_8px_30px_rgb(0,0,0,0.12)] hover:shadow-[0_8px_30px_rgb(249,115,22,0.3)]",
+                            "hover:scale-110 active:scale-95",
+                            "animate-subtle-pulse"
                         )}
                     >
                         <MessageCircle className="h-7 w-7" />
