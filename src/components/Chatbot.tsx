@@ -57,51 +57,8 @@ export function Chatbot() {
         return () => clearTimeout(timer);
     }, [isOpen]);
 
-    const [viewportHeight, setViewportHeight] = useState("100dvh");
-
-    // Handle mobile viewport height (keyboard adjustment)
-    useEffect(() => {
-        if (!isOpen) return;
-
-        const handleResize = () => {
-            if (window.visualViewport) {
-                setViewportHeight(`${window.visualViewport.height}px`);
-                // Force scroll to bottom after resize
-                if (scrollRef.current) {
-                    scrollRef.current.scrollIntoView({ behavior: "auto" });
-                }
-            }
-        };
-
-        if (window.visualViewport) {
-            window.visualViewport.addEventListener("resize", handleResize);
-            window.visualViewport.addEventListener("scroll", handleResize);
-            // Set initial height
-            handleResize();
-        }
-
-        return () => {
-            if (window.visualViewport) {
-                window.visualViewport.removeEventListener("resize", handleResize);
-                window.visualViewport.removeEventListener("scroll", handleResize);
-            }
-        };
-    }, [isOpen]);
-
-    // Focus handler to poll for viewport changes (keyboard animation)
-    const handleInputFocus = () => {
-        // Poll for 500ms to catch keyboard animation
-        const interval = setInterval(() => {
-            if (window.visualViewport) {
-                setViewportHeight(`${window.visualViewport.height}px`);
-                if (scrollRef.current) {
-                    scrollRef.current.scrollIntoView({ behavior: "auto" });
-                }
-            }
-        }, 50);
-
-        setTimeout(() => clearInterval(interval), 600);
-    };
+    // Viewport height logic removed in favor of viewport meta tag interactiveWidget: 'resizes-content'
+    // This provides a smoother native experience for mobile keyboards
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -169,13 +126,12 @@ export function Chatbot() {
             {/* Chat Window */}
             {isOpen && (
                 <div
-                    style={{ height: window.innerWidth < 640 ? viewportHeight : undefined }}
                     className={cn(
                         "flex flex-col overflow-hidden bg-background shadow-2xl transition-all duration-300 ease-in-out",
                         // Mobile styles (default): Full screen, fixed
                         "fixed inset-0 z-50 w-full rounded-none",
                         // Desktop styles (sm): Floating card
-                        "sm:fixed sm:bottom-24 sm:right-6 sm:z-50 sm:h-[600px] sm:w-[400px] sm:rounded-2xl sm:border",
+                        "sm:fixed sm:bottom-6 sm:right-6 sm:z-50 sm:h-[500px] sm:w-[350px] sm:rounded-2xl sm:border sm:left-auto sm:top-auto",
                         isMinimized && "hidden" // Hide main window when minimized (we'll show a small bar instead)
                     )}
                 >
@@ -289,7 +245,6 @@ export function Chatbot() {
                                         ref={inputRef}
                                         value={input}
                                         onChange={(e) => setInput(e.target.value)}
-                                        onFocus={handleInputFocus}
                                         placeholder="Escribe tu mensaje..."
                                         className="pr-12 h-12 rounded-full border-muted-foreground/20 bg-muted/30 focus-visible:ring-violet-600/20"
                                         disabled={isLoading}
