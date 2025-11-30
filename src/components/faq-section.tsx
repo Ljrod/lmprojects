@@ -32,14 +32,7 @@ export default function FAQSection() {
     return (
         <section className="py-20 bg-secondary/30 snap-start">
             <div className="container max-w-4xl mx-auto px-4">
-                <div className="text-center mb-12">
-                    <h2 className="font-headline text-3xl font-bold tracking-tight text-primary md:text-4xl">
-                        Preguntas Frecuentes
-                    </h2>
-                    <p className="mt-4 text-lg text-muted-foreground">
-                        Resolvemos sus dudas antes de empezar.
-                    </p>
-                </div>
+
                 <Accordion type="single" collapsible className="w-full">
                     {faqs.map((faq, index) => (
                         <AccordionItem key={index} value={`item-${index}`}>

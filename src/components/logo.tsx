@@ -8,7 +8,7 @@ export function Logo({ className, imageClassName }: { className?: string; imageC
   return (
     <Link
       href="/"
-      className={cn("relative z-50 flex items-center justify-center leading-none hover:opacity-80 transition-opacity h-24 w-auto md:h-32 lg:h-40", className)}
+      className={cn("relative z-50 flex items-center justify-center leading-none hover:opacity-80 transition-opacity h-14 w-auto md:h-32 lg:h-40", className)}
     >
       <Image
         src={logoImage}

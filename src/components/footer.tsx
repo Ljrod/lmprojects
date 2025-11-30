@@ -6,13 +6,13 @@ export default function Footer() {
       <div className="container max-w-7xl mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center md:items-start gap-2">
-            <Logo className="text-white h-12 w-auto md:h-12 lg:h-12" />
+            <Logo className="text-white h-16 w-auto" />
             <p className="text-sm text-primary-foreground/60">
               © {new Date().getFullYear()} LM Projects.
             </p>
           </div>
 
-          <div className="flex gap-8 text-sm font-medium">
+          <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm font-medium items-center">
             <a href="/nosotros" className="hover:text-accent transition-colors">
               Nosotros
             </a>
@@ -21,6 +21,9 @@ export default function Footer() {
             </a>
             <a href="/#lead-form-section" className="hover:text-accent transition-colors">
               Contacto
+            </a>
+            <a href="/preguntas-frecuentes" className="hover:text-accent transition-colors">
+              Preguntas Frecuentes
             </a>
           </div>
 

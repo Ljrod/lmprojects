@@ -23,7 +23,7 @@ const painPoints = [
 
 export default function PainPoints() {
     return (
-        <section className="py-16 bg-destructive/5 border-y border-destructive/10 snap-start">
+        <section className="py-12 md:py-16 bg-destructive/5 border-y border-destructive/10 snap-start">
             <div className="container max-w-7xl mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-2xl font-bold tracking-tight text-primary md:text-3xl">
@@ -32,14 +32,14 @@ export default function PainPoints() {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {painPoints.map((point, index) => (
-                        <div key={index} className="flex flex-col items-center text-center p-6 rounded-xl bg-background/50 backdrop-blur-sm border border-destructive/10 hover:border-destructive/30 transition-colors">
-                            <div className="p-3 rounded-full bg-destructive/10 text-destructive mb-4">
+                        <div key={index} className="group flex flex-col items-center text-center p-6 rounded-2xl bg-white border border-red-100 shadow-lg shadow-rose-500/5 hover:border-rose-300 hover:-translate-y-1 transition-all duration-300">
+                            <div className="p-4 rounded-full bg-gradient-to-br from-red-50 to-rose-100 text-rose-600 mb-6 group-hover:scale-110 transition-transform duration-300">
                                 <point.icon className="w-8 h-8" />
                             </div>
-                            <h3 className="text-lg font-semibold text-foreground mb-2">
+                            <h3 className="text-xl font-bold text-gray-900 mb-3">
                                 {point.title}
                             </h3>
-                            <p className="text-muted-foreground text-sm">
+                            <p className="text-gray-600 text-sm leading-relaxed">
                                 {point.description}
                             </p>
                         </div>

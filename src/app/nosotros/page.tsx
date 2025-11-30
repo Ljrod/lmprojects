@@ -10,15 +10,15 @@ export const metadata: Metadata = {
 const teamMembers = [
     {
         name: 'Miguel Llamedo',
-        title: 'Ingeniero de Sistemas',
-        specialization: 'Especialista en IA',
+        title: 'Director de Soluciones y Arquitectura',
+        specialization: 'Diseño técnico, arquitectura cloud, estrategia de sistemas',
         imageUrl: 'https://picsum.photos/seed/miguel/400/400',
         imageHint: 'professional headshot of a male engineer'
     },
     {
         name: 'Leduard Rodriguez',
-        title: 'Ingeniero de Sistemas',
-        specialization: 'Especialista en Gestión de Proyectos, PM',
+        title: 'Director de Gestión de Proyectos (PMO Lead)',
+        specialization: 'Planificación, coordinación, gestión de recursos y cumplimiento de hitos',
         imageUrl: 'https://picsum.photos/seed/leduard/400/400',
         imageHint: 'professional headshot of a male project manager'
     }
@@ -79,7 +79,7 @@ export default function NosotrosPage() {
                             </div>
                             <h2 className="text-2xl font-semibold text-primary mb-4">Nuestra Visión</h2>
                             <p className="text-muted-foreground">
-                                Ser la empresa líder en gestión de proyectos tecnológicos en la región, reconocida por nuestra excelencia operativa, confiabilidad y la capacidad de transformar los desafíos tecnológicos en oportunidades de crecimiento para nuestros clientes.
+                                Somos socios estratégicos en la ejecución de proyectos de infraestructura tecnológica. Nos diferenciamos por garantizar la continuidad operativa y reducir riesgos durante cambios tecnológicos críticos.
                             </p>
                         </div>
                     </div>

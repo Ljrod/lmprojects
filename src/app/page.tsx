@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import ServiceCard from '@/components/service-card';
 import LeadForm from '@/components/lead-form';
-import FAQSection from '@/components/faq-section';
+
 import ProcessSteps from '@/components/process-steps';
 import PainPoints from '@/components/pain-points';
 import { getServices, getServiceTitles } from '@/lib/data';
@@ -38,7 +38,7 @@ export default async function HomePage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative w-full py-24 md:py-32 lg:py-48 overflow-hidden snap-start">
+      <section className="relative w-full py-12 md:py-16 lg:py-20 overflow-hidden snap-start">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/95 to-primary/90 z-0" />
         <Image
           src={heroImage}
@@ -49,17 +49,17 @@ export default async function HomePage() {
           data-ai-hint="server room"
         />
         <div className="container relative z-10 text-center max-w-5xl mx-auto px-4">
-          <div className="inline-flex items-center rounded-full border border-primary-foreground/10 bg-primary-foreground/5 px-3 py-1 text-sm font-medium text-primary-foreground backdrop-blur-xl mb-8">
+          <div className="inline-flex items-center rounded-full border border-primary-foreground/10 bg-primary-foreground/5 px-3 py-1 text-sm font-medium text-primary-foreground backdrop-blur-xl mb-6">
             <span className="flex h-2 w-2 rounded-full bg-accent mr-2 animate-pulse"></span>
             Expertos en Transformación Digital
           </div>
-          <h1 className="font-headline text-5xl font-extrabold tracking-tight md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
+          <h1 className="font-headline text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl text-white mb-4 leading-tight">
             Migración a la nube y <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-cyan-300">renovación TI</span> sin fricción
           </h1>
-          <p className="mt-6 text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Modernice su infraestructura con gestión experta. Eliminamos la complejidad técnica para que usted se enfoque en hacer crecer su negocio.
           </p>
-          <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               asChild
               size="lg"
@@ -84,7 +84,7 @@ export default async function HomePage() {
 
       <div className="max-w-7xl mx-auto w-full">
         {/* Services Section */}
-        <section id="services" className="py-20 md:py-32 bg-background snap-start">
+        <section id="services" className="py-12 md:py-16 bg-background snap-start">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="font-headline text-4xl font-bold tracking-tight text-primary md:text-5xl">
@@ -106,7 +106,7 @@ export default async function HomePage() {
         <ProcessSteps />
 
         {/* Why Us Section */}
-        <section className="py-20 md:py-32 bg-secondary/50 snap-start">
+        <section className="py-12 md:py-16 bg-secondary/50 snap-start">
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="font-headline text-3xl font-bold tracking-tight text-primary md:text-4xl">
@@ -116,16 +116,16 @@ export default async function HomePage() {
                 Más que proveedores, somos su socio estratégico en tecnología.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {whyUsPoints.map((point, index) => (
-                <div key={index} className="flex flex-col items-center group">
-                  <div className="flex items-center justify-center h-20 w-20 rounded-2xl bg-white shadow-md text-primary mb-6 group-hover:scale-110 group-hover:text-accent transition-all duration-300">
-                    <point.icon className="h-10 w-10" />
+                <div key={index} className="group flex flex-col items-start text-left p-6 md:p-8 rounded-2xl bg-white border border-slate-200 shadow-sm md:border-none md:ring-1 md:ring-slate-900/5 md:shadow-sm hover:shadow-md hover:ring-blue-500 transition-all duration-300">
+                  <div className="p-3 rounded-xl bg-blue-50 text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <point.icon className="h-8 w-8" />
                   </div>
-                  <h3 className="text-xl font-bold text-primary mb-3">
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">
                     {point.title}
                   </h3>
-                  <p className="text-muted-foreground leading-relaxed px-4">
+                  <p className="text-slate-600 text-sm leading-relaxed">
                     {point.description}
                   </p>
                 </div>
@@ -134,17 +134,15 @@ export default async function HomePage() {
           </div>
         </section>
 
-        {/* FAQ Section */}
-        <FAQSection />
 
         {/* Lead Form Section */}
         <section
           id="lead-form-section"
-          className="py-20 md:py-32 bg-background snap-start"
+          className="py-12 md:py-16 bg-background snap-start"
         >
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="font-headline text-3xl font-bold tracking-tight text-primary md:text-4xl">
+              <h2 className="font-headline text-2xl font-bold tracking-tight text-primary md:text-4xl text-center">
                 Hablemos de su Proyecto
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
