@@ -157,7 +157,7 @@ export default function Header() {
           </div>
         </div>
 
-        <div className="md:hidden">
+        <div className="md:hidden shrink-0 min-w-[150px] max-w-[180px]">
           <Logo />
         </div>
 
