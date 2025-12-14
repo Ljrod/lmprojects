@@ -4,32 +4,9 @@ import { Button } from '@/components/ui/button';
 import ServiceCard from '@/components/service-card';
 import LeadForm from '@/components/lead-form';
 
-import ProcessSteps from '@/components/process-steps';
 import PainPoints from '@/components/pain-points';
 import { getServices, getServiceTitles } from '@/lib/data';
-import { Users, Package, ShieldCheck } from 'lucide-react';
 import heroImage from '@/images/hero.png';
-
-const whyUsPoints = [
-  {
-    icon: Users,
-    title: 'Gestión Cercana',
-    description:
-      'Nos integramos como una extensión de su equipo, garantizando comunicación directa y sin tecnicismos innecesarios.',
-  },
-  {
-    icon: Package,
-    title: 'Soluciones a Medida',
-    description:
-      'Adaptamos cada proyecto a su presupuesto y realidad operativa, evitando costos ocultos y sorpresas.',
-  },
-  {
-    icon: ShieldCheck,
-    title: 'Garantía Total',
-    description:
-      'Acompañamiento integral desde el diseño hasta el soporte post-implementación. Su tranquilidad es nuestra prioridad.',
-  },
-];
 
 export default async function HomePage() {
   const services = await getServices();
@@ -94,10 +71,10 @@ export default async function HomePage() {
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="font-headline text-4xl font-bold tracking-tight text-primary md:text-5xl">
-                Soluciones Integrales
+                Nuestros Servicios
               </h2>
               <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                Diseñamos estrategias tecnológicas que impulsan la eficiencia y seguridad de su empresa.
+                Nos encargamos de todo. Usted solo ve los resultados.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -107,39 +84,6 @@ export default async function HomePage() {
             </div>
           </div>
         </section>
-
-        {/* Process Section */}
-        <ProcessSteps />
-
-        {/* Why Us Section */}
-        <section className="py-12 md:py-16 bg-secondary/50 snap-start">
-          <div className="container">
-            <div className="text-center mb-16">
-              <h2 className="font-headline text-3xl font-bold tracking-tight text-primary md:text-4xl">
-                ¿Por qué elegir LM Projects?
-              </h2>
-              <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                Más que proveedores, somos su socio estratégico en tecnología.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {whyUsPoints.map((point, index) => (
-                <div key={index} className="group flex flex-col items-start text-left p-6 md:p-8 rounded-2xl bg-white border border-slate-200 shadow-sm md:border-none md:ring-1 md:ring-slate-900/5 md:shadow-sm hover:shadow-md hover:ring-blue-500 transition-all duration-300">
-                  <div className="p-3 rounded-xl bg-blue-50 text-blue-600 mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <point.icon className="h-8 w-8" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">
-                    {point.title}
-                  </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {point.description}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
 
         {/* Lead Form Section */}
         <section
@@ -167,3 +111,4 @@ export default async function HomePage() {
     </>
   );
 }
+
