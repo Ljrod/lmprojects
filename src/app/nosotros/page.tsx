@@ -19,8 +19,8 @@ const teamMembers = [
         name: 'Leduard Rodriguez',
         title: 'Director de Gestión de Proyectos (PMO Lead)',
         specialization: 'Planificación, coordinación, gestión de recursos y cumplimiento de hitos',
-        imageUrl: 'https://picsum.photos/seed/leduard/400/400',
-        imageHint: 'professional headshot of a male project manager'
+        imageUrl: '/images/leduard.jpg',
+        imageHint: ''
     }
 ];
 
@@ -99,14 +99,16 @@ export default function NosotrosPage() {
                     <div className="flex flex-wrap justify-center gap-12">
                         {teamMembers.map((member) => (
                             <div key={member.name} className="text-center flex flex-col items-center max-w-xs">
-                                <Image
-                                    src={member.imageUrl}
-                                    alt={`Retrato de ${member.name}`}
-                                    width={150}
-                                    height={150}
-                                    className="rounded-full mb-4 shadow-md"
-                                    data-ai-hint={member.imageHint}
-                                />
+                                <div className="w-[150px] h-[150px] rounded-full overflow-hidden mb-4 shadow-md">
+                                    <Image
+                                        src={member.imageUrl}
+                                        alt={`Retrato de ${member.name}`}
+                                        width={150}
+                                        height={150}
+                                        className="w-full h-full object-cover object-top"
+                                        data-ai-hint={member.imageHint}
+                                    />
+                                </div>
                                 <h3 className="text-xl font-semibold text-primary mb-2">{member.name}</h3>
                                 <p className="text-muted-foreground font-medium">{member.title}</p>
                                 <p className="text-muted-foreground text-sm">{member.specialization}</p>

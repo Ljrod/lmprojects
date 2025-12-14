@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Logo } from './logo';
 
 export default function Footer() {
@@ -13,18 +14,18 @@ export default function Footer() {
           </div>
 
           <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm font-medium items-center">
-            <a href="/nosotros" className="hover:text-accent transition-colors">
+            <Link href="/nosotros" className="hover:text-accent transition-colors">
               Nosotros
-            </a>
-            <a href="/servicios" className="hover:text-accent transition-colors">
+            </Link>
+            <Link href="/servicios" className="hover:text-accent transition-colors">
               Servicios
-            </a>
-            <a href="/#lead-form-section" className="hover:text-accent transition-colors">
+            </Link>
+            <Link href="/#lead-form-section" className="hover:text-accent transition-colors">
               Contacto
-            </a>
-            <a href="/preguntas-frecuentes" className="hover:text-accent transition-colors">
+            </Link>
+            <Link href="/preguntas-frecuentes" className="hover:text-accent transition-colors">
               Preguntas Frecuentes
-            </a>
+            </Link>
           </div>
 
           <div className="flex flex-col items-center md:items-end gap-1 text-sm text-primary-foreground/60">

@@ -50,22 +50,25 @@ export default async function HomePage() {
         />
         <div className="container relative z-10 text-center max-w-5xl mx-auto px-4">
           <div className="inline-flex items-center rounded-full border border-primary-foreground/10 bg-primary-foreground/5 px-3 py-1 text-sm font-medium text-primary-foreground backdrop-blur-xl mb-6">
-            <span className="flex h-2 w-2 rounded-full bg-accent mr-2 animate-pulse"></span>
-            Expertos en Transformación Digital
+            <span className="flex h-2 w-2 rounded-full bg-green-400 mr-2 animate-pulse"></span>
+            +50 empresas confían en nosotros
           </div>
           <h1 className="font-headline text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl text-white mb-4 leading-tight">
             Migración a la nube y <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-cyan-300">renovación TI</span> sin fricción
           </h1>
           <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Modernice su infraestructura con gestión experta. Eliminamos la complejidad técnica para que usted se enfoque en hacer crecer su negocio.
+            <strong className="text-white">Reduzca costos operativos hasta un 40%</strong> con gestión experta. Eliminamos la complejidad técnica para que usted se enfoque en hacer crecer su negocio.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               asChild
               size="lg"
-              className="bg-accent hover:bg-accent/90 text-white font-semibold text-lg h-14 px-8 rounded-full shadow-lg shadow-accent/20 transition-all hover:scale-105"
+              className="bg-accent hover:bg-accent/90 text-white font-semibold text-lg h-14 px-8 rounded-full shadow-lg shadow-accent/20 transition-all hover:scale-105 relative overflow-hidden group"
             >
-              <Link href="#lead-form-section">Solicitar Presupuesto</Link>
+              <Link href="#lead-form-section">
+                <span className="relative z-10">Solicitar Diagnóstico GRATIS</span>
+                <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></span>
+              </Link>
             </Button>
             <Button
               asChild
@@ -76,6 +79,9 @@ export default async function HomePage() {
               <Link href="#services">Ver Servicios</Link>
             </Button>
           </div>
+          <p className="mt-4 text-sm text-gray-400">
+            ✓ Sin compromiso · ✓ Respuesta en 24 horas · ✓ 100% confidencial
+          </p>
         </div>
       </section>
 
@@ -143,11 +149,16 @@ export default async function HomePage() {
           <div className="container">
             <div className="text-center mb-12">
               <h2 className="font-headline text-2xl font-bold tracking-tight text-primary md:text-4xl text-center">
-                Hablemos de su Proyecto
+                Obtenga su Diagnóstico Gratuito
               </h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                Complete el formulario y nos pondremos en contacto a la brevedad.
+                Descubra cómo optimizar su infraestructura TI. <strong>Sin costo y sin compromiso.</strong>
               </p>
+              <div className="mt-6 flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+                <span className="flex items-center gap-2"><span className="text-green-500">✓</span> Respuesta en 24h</span>
+                <span className="flex items-center gap-2"><span className="text-green-500">✓</span> 100% Confidencial</span>
+                <span className="flex items-center gap-2"><span className="text-green-500">✓</span> Sin vendedores agresivos</span>
+              </div>
             </div>
             <LeadForm services={serviceTitles} />
           </div>

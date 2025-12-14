@@ -24,8 +24,8 @@ export default function ServiceCard({ service }: { service: Service }) {
             {Icon && <Icon className="w-8 h-8" aria-hidden="true" />}
           </div>
           {/* Badge */}
-          <div className="px-2 py-1 rounded-full bg-slate-100 border border-slate-200 text-[10px] font-semibold text-slate-600 uppercase tracking-wider">
-            Core
+          <div className="px-2 py-1 rounded-full bg-amber-50 border border-amber-200 text-[10px] font-semibold text-amber-700 uppercase tracking-wider">
+            Alta Demanda
           </div>
         </div>
         <h3 className="text-xl md:text-2xl font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors duration-300 text-left">
@@ -46,7 +46,7 @@ export default function ServiceCard({ service }: { service: Service }) {
               href={`/servicios/${service.slug}`}
               aria-label={`Ver más detalles sobre ${service.title}`}
             >
-              Ver detalles
+              Descubrir Cómo
               <ArrowRight className="ml-2 h-4 w-4 transition-all duration-300 group-hover:translate-x-2 group-hover:text-blue-500" aria-hidden="true" />
             </Link>
           </Button>

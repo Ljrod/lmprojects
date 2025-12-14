@@ -3,7 +3,6 @@ import './globals.css';
 import { Toaster } from '@/components/ui/toaster';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import isologo from '@/images/isologo.ico';
 import { Chatbot } from '@/components/Chatbot';
 
 export const metadata: Metadata = {

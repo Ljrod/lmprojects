@@ -137,15 +137,12 @@ export default function Header() {
                       </Link>
                     ))}
                   </nav>
-                  <div className="mt-8 flex flex-col space-y-4">
-                    <Button asChild variant="ghost" className="duration-300">
-                      <Link href="/signin">Sign in</Link>
-                    </Button>
+                  <div className="mt-8">
                     <Button
                       asChild
-                      className="bg-accent hover:bg-accent/90 text-accent-foreground"
+                      className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
                     >
-                      <Link href="/login">Login</Link>
+                      <Link href="/#lead-form-section" onClick={() => setIsMobileMenuOpen(false)}>Contáctanos</Link>
                     </Button>
                   </div>
                 </div>
@@ -203,15 +200,12 @@ export default function Header() {
           ))}
         </nav>
 
-        <div className="hidden md:flex items-center gap-4">
-          <Button asChild variant="ghost" className="duration-300">
-            <Link href="/signin">Sign in</Link>
-          </Button>
+        <div className="hidden md:flex items-center">
           <Button
             asChild
             className="bg-accent hover:bg-accent/90 text-accent-foreground"
           >
-            <Link href="/login">Login</Link>
+            <Link href="/#lead-form-section">Contáctanos</Link>
           </Button>
         </div>
       </div>
