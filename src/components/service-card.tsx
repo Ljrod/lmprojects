@@ -55,3 +55,4 @@ export default function ServiceCard({ service }: { service: Service }) {
     </article>
   );
 }
+

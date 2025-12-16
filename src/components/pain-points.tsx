@@ -1,31 +1,31 @@
 import Link from 'next/link';
-import { AlertTriangle, Clock, Lock } from 'lucide-react';
+import { AlertTriangle, Clock, Lock, FileWarning } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const painPoints = [
     {
         icon: Clock,
-        title: 'Lentitud Operativa',
+        title: 'Operaciones Lentas',
         stat: '-40%',
         statLabel: 'productividad',
         description:
-            'Equipos obsoletos y sistemas lentos que frustran a sus empleados y reducen la productividad diaria.',
+            'Equipos obsoletos en sucursales y puntos de venta que generan filas, frustran a clientes y reducen ventas.',
     },
     {
         icon: AlertTriangle,
-        title: 'Riesgo de Fallos',
+        title: 'Caídas en Sucursales',
         stat: '3x',
-        statLabel: 'más caídas',
+        statLabel: 'más incidentes',
         description:
-            'Hardware sin garantía y software desactualizado que aumentan la probabilidad de caídas críticas del sistema.',
+            'Hardware sin garantía y sistemas desactualizados que provocan caídas críticas en horarios de alta demanda.',
     },
     {
         icon: Lock,
-        title: 'Vulnerabilidad',
+        title: 'Riesgo de Seguridad',
         stat: '60%',
-        statLabel: 'más ataques',
+        statLabel: 'más vulnerables',
         description:
-            'Sistemas operativos antiguos sin parches de seguridad que exponen su empresa a ciberataques y pérdida de datos.',
+            'Sistemas operativos antiguos sin parches que exponen datos financieros y de clientes a ciberataques.',
     },
 ];
 
@@ -35,9 +35,9 @@ export default function PainPoints() {
             <div className="container max-w-7xl mx-auto px-4">
                 <div className="text-center mb-12">
                     <h2 className="font-headline text-2xl font-bold tracking-tight text-primary md:text-3xl">
-                        ¿Cuánto dinero está perdiendo por tecnología obsoleta?
+                        ¿Cuánto le cuesta la tecnología obsoleta a su operación?
                     </h2>
-                    <p className="mt-2 text-muted-foreground">Estos problemas le cuestan miles de dólares cada mes</p>
+                    <p className="mt-2 text-muted-foreground">Problemas comunes en instituciones financieras y retail</p>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {painPoints.map((point, index) => (

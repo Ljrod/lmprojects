@@ -1,4 +1,4 @@
-import { Replace, Layers, CloudUpload, Bot, Globe } from 'lucide-react';
+import { Replace, Layers, CloudUpload, Bot, Globe, Database } from 'lucide-react';
 import type { Service } from './types';
 
 const services: Service[] = [
@@ -7,9 +7,9 @@ const services: Service[] = [
     title: 'Renovación de equipos tecnológicos',
     slug: 'renovacion-de-equipos-tecnologicos',
     shortDescription:
-      'Auditoría, plan de recambio, imagen corporativa y despliegue en terreno.',
+      'Auditoría, plan de recambio, imagen corporativa y despliegue en terreno para sucursales y puntos de venta.',
     longDescription:
-      'Ofrecemos un servicio completo para la renovación de su parque tecnológico. Realizamos una auditoría exhaustiva de sus equipos actuales, elaboramos un plan de recambio estratégico, gestionamos la adquisición de nuevo hardware, preparamos una imagen corporativa para los sistemas operativos y nos encargamos de la instalación y configuración en las dependencias del cliente. Finalmente, gestionamos el retiro responsable y ecológico de los equipos antiguos.',
+      'Ofrecemos un servicio completo para la renovación de su parque tecnológico en instituciones financieras y cadenas retail. Realizamos una auditoría exhaustiva de sus equipos actuales en sucursales y puntos de venta, elaboramos un plan de recambio estratégico, gestionamos la adquisición de nuevo hardware, preparamos una imagen corporativa para los sistemas operativos y nos encargamos de la instalación y configuración en terreno. Finalmente, gestionamos el retiro responsable y ecológico de los equipos antiguos cumpliendo normativas del sector.',
     icon: Replace,
   },
   {
@@ -17,9 +17,9 @@ const services: Service[] = [
     title: 'Migración de sistemas operativos',
     slug: 'migracion-de-sistemas-operativos',
     shortDescription:
-      'Actualización masiva (Windows 11/macOS/Linux), gestión de compatibilidad y despliegue automatizado.',
+      'Actualización masiva (Windows 11/macOS/Linux), gestión de compatibilidad con sistemas core bancarios y POS.',
     longDescription:
-      'Facilitamos la actualización y migración de sistemas operativos en toda su organización. Nuestro proceso incluye un inventario detallado de software y hardware, la creación de respaldos de seguridad, el despliegue automatizado y silencioso de la nueva versión (Windows, macOS o Linux), un plan de pruebas de usuario y la entrega de documentación completa del proceso para futuras referencias.',
+      'Facilitamos la actualización y migración de sistemas operativos en toda su organización. Nuestro proceso incluye un inventario detallado de software y hardware, la creación de respaldos de seguridad, el despliegue automatizado y silencioso de la nueva versión (Windows, macOS o Linux), validación de compatibilidad con sistemas core bancarios y aplicaciones de punto de venta, un plan de pruebas de usuario y la entrega de documentación completa del proceso.',
     icon: Layers,
   },
   {
@@ -27,9 +27,9 @@ const services: Service[] = [
     title: 'Migración de servidores a la nube',
     slug: 'migracion-de-servidores-a-la-nube',
     shortDescription:
-      'Estrategia de traslado a Azure, AWS o GCP, incluyendo arquitectura segura y estabilización.',
+      'Estrategia de traslado a Azure, AWS o GCP con cumplimiento regulatorio para el sector financiero.',
     longDescription:
-      'Acompañamos a su empresa en el viaje a la nube. Realizamos un assessment de su infraestructura local para determinar la mejor estrategia. Diseñamos una arquitectura cloud a medida en Azure, AWS o GCP, optimizada para costos y rendimiento. Ejecutamos la migración de servidores y datos, y realizamos validaciones exhaustivas para asegurar la continuidad operativa. Implementamos una base de seguridad y gobernanza para proteger sus activos en la nube.',
+      'Acompañamos a su empresa en el viaje a la nube con foco en cumplimiento regulatorio. Realizamos un assessment de su infraestructura local para determinar la mejor estrategia. Diseñamos una arquitectura cloud a medida en Azure, AWS o GCP, optimizada para costos, rendimiento y cumplimiento de normativas del sector financiero y retail. Ejecutamos la migración de servidores y datos, implementamos controles de seguridad y gobernanza para proteger sus activos críticos.',
     icon: CloudUpload,
   },
   {
@@ -37,9 +37,9 @@ const services: Service[] = [
     title: 'Chatbots inteligentes para empresas',
     slug: 'chatbots-inteligentes-para-empresas',
     shortDescription:
-      'Asistentes virtuales con IA que atienden clientes 24/7, capturan leads y automatizan respuestas.',
+      'Asistentes virtuales con IA para atención al cliente en banca digital y comercio electrónico 24/7.',
     longDescription:
-      'Desarrollamos e integramos chatbots inteligentes potenciados por IA para su empresa. Nuestros asistentes virtuales atienden consultas de clientes las 24 horas, capturan información de leads automáticamente, responden preguntas frecuentes y escalan casos complejos a su equipo. Integramos el chatbot con su CRM, WhatsApp Business, y su sitio web para una experiencia omnicanal.',
+      'Desarrollamos e integramos chatbots inteligentes potenciados por IA para el sector financiero y retail. Nuestros asistentes virtuales atienden consultas de clientes las 24 horas, automatizan procesos de atención bancaria, gestionan consultas de productos en e-commerce, capturan leads y escalan casos complejos a su equipo. Integramos el chatbot con su CRM, WhatsApp Business, banca en línea y su sitio web para una experiencia omnicanal.',
     icon: Bot,
   },
   {
@@ -47,10 +47,20 @@ const services: Service[] = [
     title: 'Aplicaciones web empresariales',
     slug: 'aplicaciones-web-empresariales',
     shortDescription:
-      'Desarrollo de aplicaciones web robustas, escalables y seguras para digitalizar sus procesos.',
+      'Desarrollo de portales de clientes, dashboards financieros y sistemas de gestión para retail.',
     longDescription:
-      'Creamos aplicaciones web a medida para digitalizar y optimizar los procesos de su empresa. Desde portales de clientes hasta sistemas de gestión internos, desarrollamos soluciones robustas, escalables y seguras utilizando las mejores tecnologías del mercado. Incluye diseño UX/UI profesional, integración con sus sistemas existentes y soporte post-lanzamiento.',
+      'Creamos aplicaciones web a medida para digitalizar y optimizar los procesos de instituciones financieras y empresas retail. Portales de banca en línea, dashboards de gestión financiera, sistemas de inventario para retail, plataformas e-commerce B2B. Desarrollamos soluciones robustas, escalables y seguras utilizando las mejores tecnologías del mercado. Incluye diseño UX/UI profesional, integración con sistemas core y soporte post-lanzamiento.',
     icon: Globe,
+  },
+  {
+    id: '6',
+    title: 'Control de inventario y CMDB',
+    slug: 'control-de-inventario-cmdb',
+    shortDescription:
+      'Gestión centralizada de activos TI, trazabilidad completa y reportería para auditorías regulatorias.',
+    longDescription:
+      'Implementamos soluciones de CMDB (Configuration Management Database) para el control y gestión de todos sus activos tecnológicos. Ideal para instituciones financieras y cadenas retail que requieren trazabilidad completa de hardware y software en múltiples sucursales. Incluye inventario automatizado, gestión del ciclo de vida de activos, reportería para auditorías regulatorias, integración con mesa de ayuda y alertas de vencimiento de licencias y garantías.',
+    icon: Database,
   },
 ];
 

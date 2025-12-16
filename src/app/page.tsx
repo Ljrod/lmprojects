@@ -28,13 +28,13 @@ export default async function HomePage() {
         <div className="container relative z-10 text-center max-w-5xl mx-auto px-4">
           <div className="inline-flex items-center rounded-full border border-primary-foreground/10 bg-primary-foreground/5 px-3 py-1 text-sm font-medium text-primary-foreground backdrop-blur-xl mb-6">
             <span className="flex h-2 w-2 rounded-full bg-green-400 mr-2 animate-pulse"></span>
-            +50 empresas confían en nosotros
+            Especialistas en Banca y Retail
           </div>
           <h1 className="font-headline text-4xl font-extrabold tracking-tight md:text-5xl lg:text-6xl text-white mb-4 leading-tight">
-            Migración a la nube y <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-cyan-300">renovación TI</span> sin fricción
+            Infraestructura TI para <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-cyan-300">servicios financieros y retail</span>
           </h1>
           <p className="mt-4 text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            <strong className="text-white">Reduzca costos operativos hasta un 40%</strong> con gestión experta. Eliminamos la complejidad técnica para que usted se enfoque en hacer crecer su negocio.
+            <strong className="text-white">Renovación tecnológica, migración cloud y CMDB</strong> con cumplimiento regulatorio. Expertos en sucursales bancarias, puntos de venta y operaciones multi-sitio.
           </p>
           <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -71,10 +71,10 @@ export default async function HomePage() {
           <div className="container">
             <div className="text-center mb-16">
               <h2 className="font-headline text-4xl font-bold tracking-tight text-primary md:text-5xl">
-                Nuestros Servicios
+                Servicios Especializados
               </h2>
               <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-                Nos encargamos de todo. Usted solo ve los resultados.
+                Soluciones diseñadas para instituciones financieras y cadenas retail con cumplimiento regulatorio.
               </p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -6,7 +6,7 @@ export type Service = {
   slug: string;
   shortDescription: string;
   longDescription: string;
-  icon?: React.ComponentType<{className?: string}>;
+  icon?: React.ComponentType<{ className?: string }>;
 };
 
 export type Lead = {
