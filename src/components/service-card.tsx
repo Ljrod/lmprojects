@@ -23,10 +23,6 @@ export default function ServiceCard({ service }: { service: Service }) {
           <div className="relative p-3 rounded-2xl bg-blue-50 border border-blue-500/20 shadow-lg shadow-blue-500/20 text-blue-600 group-hover:scale-110 transition-transform duration-500">
             {Icon && <Icon className="w-8 h-8" aria-hidden="true" />}
           </div>
-          {/* Badge */}
-          <div className="px-2 py-1 rounded-full bg-amber-50 border border-amber-200 text-[10px] font-semibold text-amber-700 uppercase tracking-wider">
-            Alta Demanda
-          </div>
         </div>
         <h3 className="text-xl md:text-2xl font-bold tracking-tight text-slate-900 group-hover:text-blue-600 transition-colors duration-300 text-left">
           {service.title}

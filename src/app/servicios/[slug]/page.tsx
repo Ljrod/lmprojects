@@ -6,12 +6,13 @@ import type { Metadata } from 'next';
 import { Check, Shield, Clock, Award, Users } from 'lucide-react';
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 };
 
 // Generate metadata for each service page
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const service = await getServiceBySlug(params.slug);
+  const { slug } = await params;
+  const service = await getServiceBySlug(slug);
 
   if (!service) {
     return {
@@ -50,7 +51,8 @@ const benefits = [
 ];
 
 export default async function ServiceDetailPage({ params }: Props) {
-  const service = await getServiceBySlug(params.slug);
+  const { slug } = await params;
+  const service = await getServiceBySlug(slug);
   const serviceTitles = await getServiceTitles();
 
   if (!service) {

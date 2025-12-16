@@ -1,41 +1,65 @@
 import Link from 'next/link';
 import { Logo } from './logo';
+import { Phone, Mail } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-primary text-primary-foreground border-t border-white/10 w-full py-12 snap-start">
-      <div className="container max-w-7xl mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex flex-col items-center md:items-start gap-2">
-            <Logo className="text-white h-16 w-auto" />
-            <p className="text-sm text-primary-foreground/60">
-              © {new Date().getFullYear()} LM Projects.
-            </p>
+    <footer className="bg-primary text-primary-foreground w-full py-4 snap-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
+          {/* Logo + Copyright */}
+          <div className="flex items-center gap-3">
+            <Logo className="text-white h-8 w-auto opacity-80" />
+            <span className="text-xs text-white/40 hidden sm:inline">
+              © {new Date().getFullYear()} LM Projects
+            </span>
           </div>
 
-          <div className="flex flex-col md:flex-row gap-4 md:gap-8 text-sm font-medium items-center">
-            <Link href="/nosotros" className="hover:text-accent transition-colors">
+          {/* Navigation */}
+          <nav className="flex flex-wrap justify-center gap-x-5 gap-y-1 text-xs">
+            <Link href="/nosotros" className="text-white/60 hover:text-white transition-colors">
               Nosotros
             </Link>
-            <Link href="/servicios" className="hover:text-accent transition-colors">
+            <Link href="/servicios" className="text-white/60 hover:text-white transition-colors">
               Servicios
             </Link>
-            <Link href="/#lead-form-section" className="hover:text-accent transition-colors">
+            <Link href="/#lead-form-section" className="text-white/60 hover:text-white transition-colors">
               Contacto
             </Link>
-            <Link href="/preguntas-frecuentes" className="hover:text-accent transition-colors">
-              Preguntas Frecuentes
+            <Link href="/preguntas-frecuentes" className="text-white/60 hover:text-white transition-colors">
+              FAQ
             </Link>
-          </div>
+          </nav>
 
-          <div className="flex flex-col items-center md:items-end gap-1 text-sm text-primary-foreground/60">
-            <a href="mailto:contacto@lmprojects.cl" className="hover:text-white transition-colors">
-              contacto@lmprojects.cl
+          {/* Contact Icons */}
+          <div className="flex items-center gap-3 text-xs">
+            <a
+              href="https://wa.me/56983151563"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-green-400 hover:text-green-300 transition-colors"
+            >
+              <Phone className="h-3 w-3" />
+              <span className="hidden md:inline">WhatsApp</span>
             </a>
-            <p>Santiago, Chile</p>
+            <a
+              href="mailto:contacto@lmprojects.cl"
+              className="flex items-center gap-1 text-white/60 hover:text-white transition-colors"
+            >
+              <Mail className="h-3 w-3" />
+              <span className="hidden md:inline">Email</span>
+            </a>
           </div>
         </div>
+
+        {/* Mobile Copyright */}
+        <p className="text-center text-[10px] text-white/30 mt-3 sm:hidden">
+          © {new Date().getFullYear()} LM Projects · Santiago, Chile
+        </p>
       </div>
     </footer>
   );
 }
+
+
+

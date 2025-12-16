@@ -238,7 +238,7 @@ export default function LeadForm({
             {isPending ? (
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
             ) : null}
-            {isPending ? 'Enviando...' : 'Solicitar Presupuesto'}
+            {isPending ? 'Enviando...' : 'Obtener Mi Diagnóstico Gratis'}
           </Button>
         </form>
       </Form>

@@ -6,11 +6,11 @@ import Footer from '@/components/footer';
 import { Chatbot } from '@/components/Chatbot';
 
 export const metadata: Metadata = {
-  title: 'LM Projects | Gestión y Migraciones Tecnológicas',
+  title: 'LM Projects | Infraestructura TI para Banca y Retail',
   description:
-    'Transforma tu infraestructura TI con LM Projects. Migraciones y renovación tecnológica con gestión experta, sin fricción operativa.',
+    'Especialistas en renovación tecnológica, migración cloud y CMDB para instituciones financieras y retail. Cumplimiento regulatorio garantizado.',
   icons: {
-    icon: '/favicon.ico', // Usar una ruta absoluta al favicon
+    icon: '/favicon.ico',
   },
 };
 

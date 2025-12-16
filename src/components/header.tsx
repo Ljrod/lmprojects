@@ -142,7 +142,7 @@ export default function Header() {
                       asChild
                       className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
                     >
-                      <Link href="/#lead-form-section" onClick={() => setIsMobileMenuOpen(false)}>Contáctanos</Link>
+                      <Link href="/#lead-form-section" onClick={() => setIsMobileMenuOpen(false)}>Diagnóstico Gratis</Link>
                     </Button>
                   </div>
                 </div>
@@ -205,7 +205,7 @@ export default function Header() {
             asChild
             className="bg-accent hover:bg-accent/90 text-accent-foreground"
           >
-            <Link href="/#lead-form-section">Contáctanos</Link>
+            <Link href="/#lead-form-section">Diagnóstico Gratis</Link>
           </Button>
         </div>
       </div>
