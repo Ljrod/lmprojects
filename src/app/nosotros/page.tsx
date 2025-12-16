@@ -119,17 +119,17 @@ export default function NosotrosPage() {
             </section>
 
             {/* Team Section - Simplified */}
-            <section className="py-16 md:py-24 bg-secondary/50">
+            <section className="py-12 md:py-16 bg-secondary/50">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="text-center mb-12">
-                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-4">
+                    <div className="text-center mb-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-primary mb-2">
                             Liderazgo con Experiencia
                         </h2>
-                        <p className="text-muted-foreground">
+                        <p className="text-muted-foreground text-sm">
                             Un equipo senior enfocado en resultados, no en burocracia.
                         </p>
                     </div>
-                    <div className="grid sm:grid-cols-2 gap-8">
+                    <div className="grid sm:grid-cols-2 gap-6">
                         {teamMembers.map((member) => (
                             <div key={member.name} className="bg-white rounded-2xl p-6 border border-border text-center">
                                 <div className="w-24 h-24 rounded-full overflow-hidden mx-auto mb-4 ring-4 ring-accent/20">
@@ -151,24 +151,24 @@ export default function NosotrosPage() {
             </section>
 
             {/* Trust Indicators */}
-            <section className="py-12 bg-white border-y">
+            <section className="py-8 bg-white border-y">
                 <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm text-muted-foreground">
-                        <div className="flex items-center gap-2">
-                            <CheckCircle className="h-5 w-5 text-green-500" />
-                            <span>Empresa constituida en Chile</span>
+                    <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-muted-foreground">
+                        <div className="flex items-center justify-center gap-2">
+                            <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                            <span className="text-center">Empresa en Chile</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <CheckCircle className="h-5 w-5 text-green-500" />
-                            <span>Facturación electrónica</span>
+                        <div className="flex items-center justify-center gap-2">
+                            <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                            <span className="text-center">Factura electrónica</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <CheckCircle className="h-5 w-5 text-green-500" />
-                            <span>Contratos con SLA garantizado</span>
+                        <div className="flex items-center justify-center gap-2">
+                            <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                            <span className="text-center">Contratos con SLA</span>
                         </div>
-                        <div className="flex items-center gap-2">
-                            <CheckCircle className="h-5 w-5 text-green-500" />
-                            <span>NDA y confidencialidad</span>
+                        <div className="flex items-center justify-center gap-2">
+                            <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0" />
+                            <span className="text-center">NDA disponible</span>
                         </div>
                     </div>
                 </div>
