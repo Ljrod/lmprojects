@@ -23,11 +23,17 @@ export default function Footer() {
             <Link href="/servicios" className="text-white/60 hover:text-white transition-colors">
               Servicios
             </Link>
+            <Link href="/como-trabajamos" className="text-white/60 hover:text-white transition-colors">
+              Cómo Trabajamos
+            </Link>
             <Link href="/#lead-form-section" className="text-white/60 hover:text-white transition-colors">
               Contacto
             </Link>
             <Link href="/preguntas-frecuentes" className="text-white/60 hover:text-white transition-colors">
               FAQ
+            </Link>
+            <Link href="/politica-de-privacidad" className="text-white/60 hover:text-white transition-colors">
+              Privacidad
             </Link>
           </nav>
 

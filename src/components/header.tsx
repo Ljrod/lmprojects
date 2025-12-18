@@ -25,6 +25,7 @@ import type { Service } from '@/lib/types';
 
 const navLinks = [
   { href: '/nosotros', label: 'Nosotros' },
+  { href: '/como-trabajamos', label: 'Cómo Trabajamos' },
   { href: '/#lead-form-section', label: 'Contacto' },
 ];
 

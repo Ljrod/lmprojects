@@ -10,10 +10,10 @@ export const metadata: Metadata = {
 };
 
 const stats = [
-    { number: '+50', label: 'Proyectos Exitosos' },
-    { number: '99.9%', label: 'Uptime Garantizado' },
-    { number: '0', label: 'Incidentes Críticos' },
-    { number: '24h', label: 'Tiempo de Respuesta' },
+    { number: '100%', label: 'Proyectos Documentados' },
+    { number: 'SLA', label: 'Uptime Acordado por Contrato' },
+    { number: '24h', label: 'Respuesta Garantizada' },
+    { number: 'NDA', label: 'Confidencialidad Asegurada' },
 ];
 
 const differentiators = [

@@ -41,6 +41,14 @@ const faqs = [
         question: '¿Ofrecen soporte después del proyecto?',
         answer: 'Sí, todos nuestros proyectos incluyen un período de estabilización y soporte post-implementación. También ofrecemos contratos de soporte continuo con SLA garantizado.',
     },
+    {
+        question: '¿Qué incluye el diagnóstico gratuito?',
+        answer: 'El diagnóstico incluye: levantamiento de inventario actual, identificación de riesgos técnicos y regulatorios, recomendaciones priorizadas y estimación de alcance. No incluye implementación ni acceso a sistemas productivos. Duración: 1-2 reuniones de 45 minutos.',
+    },
+    {
+        question: '¿Cómo manejan la seguridad de accesos durante el proyecto?',
+        answer: 'Utilizamos accesos temporales con permisos mínimos, VPN dedicada cuando se requiere, logs de auditoría de todas las acciones, y entornos de prueba separados de producción. Al finalizar, revocamos todos los accesos y entregamos un reporte de cierre.',
+    },
 ];
 
 export default function FAQSection() {

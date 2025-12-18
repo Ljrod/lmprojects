@@ -6,24 +6,21 @@ const painPoints = [
     {
         icon: Clock,
         title: 'Operaciones Lentas',
-        stat: '-40%',
-        statLabel: 'productividad',
+        problem: 'Menor Productividad',
         description:
             'Equipos obsoletos en sucursales y puntos de venta que generan filas, frustran a clientes y reducen ventas.',
     },
     {
         icon: AlertTriangle,
         title: 'Caídas en Sucursales',
-        stat: '3x',
-        statLabel: 'más incidentes',
+        problem: 'Mayor Riesgo Operacional',
         description:
             'Hardware sin garantía y sistemas desactualizados que provocan caídas críticas en horarios de alta demanda.',
     },
     {
         icon: Lock,
         title: 'Riesgo de Seguridad',
-        stat: '60%',
-        statLabel: 'más vulnerables',
+        problem: 'Exposición a Vulnerabilidades',
         description:
             'Sistemas operativos antiguos sin parches que exponen datos financieros y de clientes a ciberataques.',
     },
@@ -46,8 +43,7 @@ export default function PainPoints() {
                                 <point.icon className="w-8 h-8" />
                             </div>
                             <div className="mb-4">
-                                <span className="text-3xl font-black text-rose-600">{point.stat}</span>
-                                <span className="text-sm text-rose-500 ml-1">{point.statLabel}</span>
+                                <span className="text-lg font-bold text-rose-600">{point.problem}</span>
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 mb-3">
                                 {point.title}
